@@ -419,7 +419,9 @@ MonoBehaviour:
   _pixelOffset: 0.005
   _noiseScale: 1.5
   _noiseFrequency: 2.5
-  _noiseSpeed: 5
+  _noiseSpeed: 6.5
+  _depthStart: 0
+  _depthDistance: 10
 --- !u!1 &1441800306 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6137497490245145672, guid: a2aaaa094093a294aade9f5a5ce62bbb,
@@ -604,7 +606,9 @@ MonoBehaviour:
   _pixelOffset: 0.005
   _noiseScale: 1.5
   _noiseFrequency: 2.5
-  _noiseSpeed: 5
+  _noiseSpeed: 6.5
+  _depthStart: 0
+  _depthDistance: 10
 --- !u!1001 &2013959425
 PrefabInstance:
   m_ObjectHideFlags: 0
