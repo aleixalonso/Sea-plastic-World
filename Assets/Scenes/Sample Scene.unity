@@ -418,8 +418,8 @@ MonoBehaviour:
   _mat: {fileID: 2100000, guid: d38c555f55e284d1b921297d3f03ceba, type: 2}
   _pixelOffset: 0.005
   _noiseScale: 1.5
-  _noiseFrequency: 2.5
-  _noiseSpeed: 6.5
+  _noiseFrequency: 1
+  _noiseSpeed: 3
   _depthStart: 0
   _depthDistance: 10
 --- !u!1 &1441800306 stripped
@@ -674,8 +674,8 @@ MonoBehaviour:
   _mat: {fileID: 2100000, guid: d38c555f55e284d1b921297d3f03ceba, type: 2}
   _pixelOffset: 0.005
   _noiseScale: 1.5
-  _noiseFrequency: 2.5
-  _noiseSpeed: 6.5
+  _noiseFrequency: 1
+  _noiseSpeed: 3
   _depthStart: 0
   _depthDistance: 10
 --- !u!1001 &2013959425
