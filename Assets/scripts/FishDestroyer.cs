@@ -18,8 +18,10 @@ public class FishDestroyer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.name);
-        Destroy(other.gameObject);
+        if (other.CompareTag("Fish") || other.CompareTag("TrashObject"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 
 }

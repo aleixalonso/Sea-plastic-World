@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1504635876}
   m_Layer: 0
   m_Name: TrashBag_A
-  m_TagString: TrashBag
+  m_TagString: TrashObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c3bb9568b974cb08c4239dea5041a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  peopleToMove: 1

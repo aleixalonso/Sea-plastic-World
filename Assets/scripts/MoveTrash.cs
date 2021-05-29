@@ -33,17 +33,17 @@ public class MoveTrash : MonoBehaviour
             oldPosition = newPosition;
             newPosition = transform.position;
 
-            Debug.Log("RIGID BODY SPEED: " + speedRB.ToString("F2"));
+            //Debug.Log("RIGID BODY SPEED: " + speedRB.ToString("F2"));
 
 
             timeGrabbed += Time.deltaTime;
             transform.SetPositionAndRotation(objectCollide.transform.position, transform.rotation);
 
             if (timeGrabbed > 2.0) {
-                Debug.Log("UNITY SPEED: " + speed.ToString("F2"));
+                //Debug.Log("UNITY SPEED: " + speed.ToString("F2"));
                 if (speed > 120.0)
                 {
-                    Debug.Log("ENTRO PORQUE SPEED: " + speed.ToString("F2"));
+                    //Debug.Log("ENTRO PORQUE SPEED: " + speed.ToString("F2"));
                     isMoving = false;
                     objectCollide = null;
                     timeGrabbed = 0.0f;
