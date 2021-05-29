@@ -28,7 +28,7 @@ Material:
     - _DepthStart: 0
     - _NoiseFrequency: 1
     - _NoiseScale: 1.5
-    - _NoiseSpeed: 3
+    - _NoiseSpeed: 1.5
     - _PixelOffset: 0.005
     m_Colors: []
   m_BuildTextureStacks: []
