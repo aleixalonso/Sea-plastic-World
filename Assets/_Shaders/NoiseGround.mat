@@ -33,7 +33,7 @@ Material:
     - _NoiseFrequency: 1.25
     - _NoiseScake: 1
     - _NoiseScale: 8
-    - _Tess: 6
+    - _Tess: 2.8
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _NoiseOffset: {r: 0, g: 0, b: 0, a: 0}
