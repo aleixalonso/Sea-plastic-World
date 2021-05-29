@@ -5,7 +5,8 @@ using UnityEngine;
 public class MoveTrash : MonoBehaviour
 {
     public int peopleToMove = 1;
-    //public float movementSpeed = 1.0f;
+    public float movementSpeed = 0.02f;
+    public AudioClip beepSound;
 
     private int currentPeopleMoving = 0;
     private bool isMoving = false;
@@ -16,6 +17,8 @@ public class MoveTrash : MonoBehaviour
     private GameObject playerAlone = null;
 
     private GameObject Halo = null;
+
+    private AudioSource audioSource;
 
     private float timeGrabbed = 0.0f;
     private float speed = 0.0f;
@@ -30,6 +33,7 @@ public class MoveTrash : MonoBehaviour
         if(Halo) Halo.SetActive(false);
         randPosition = new Vector3(Random.Range(9, 90), 0, Random.Range(9, 90));
         //Debug.Log("POSITION: " + randPosition);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -39,7 +43,7 @@ public class MoveTrash : MonoBehaviour
         {
             
             UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
-            float movementSpeed = 0.1f;
+            transform.Rotate(0, 0, 1.0f * Time.deltaTime);
             //Vector3 randPosition = new Vector3(Random.Range(9, 90), 0, Random.Range(9, 90));
             float distance = Vector3.Distance(randPosition, transform.position);
             if (distance > 1.0f)
@@ -82,17 +86,20 @@ public class MoveTrash : MonoBehaviour
 
                 if (timeGrabbed > 2.0)
                 {
-                    //Debug.Log("UNITY SPEED: " + speed.ToString("F2"));
+                    Debug.Log("UNITY SPEED: " + speed.ToString("F2"));
                     if (speed > 120.0)
                     {
                         //Debug.Log("ENTRO PORQUE SPEED: " + speed.ToString("F2"));
                         isMoving = false;
-                        if (playerAlone.CompareTag("Player1"))
+                        if (playerAlone.CompareTag("Player1Moving"))
                         {
+                            player1.gameObject.tag = "Player1";
                             player1 = null;
+
                         }
-                        else if (playerAlone.CompareTag("Player2"))
+                        else if (playerAlone.CompareTag("Player2Moving"))
                         {
+                            player2.gameObject.tag = "Player2";
                             player2 = null;
                         }
                         playerAlone = null;
@@ -124,12 +131,14 @@ public class MoveTrash : MonoBehaviour
                     if (timeGrabbed > 2.0)
                     {
                         isMoving = false;
-                        if (playerAlone.CompareTag("Player1"))
+                        if (playerAlone.CompareTag("Player1Moving"))
                         {
+                            player1.gameObject.tag = "Player1";
                             player1 = null;
                         }
-                        else if (playerAlone.CompareTag("Player2"))
+                        else if (playerAlone.CompareTag("Player2Moving"))
                         {
+                            player2.gameObject.tag = "Player2";
                             player2 = null;
                         }
                         playerAlone = null;
@@ -147,6 +156,8 @@ public class MoveTrash : MonoBehaviour
                 if(dist > 5.0f)
                 {
                     isMoving = false;
+                    player1.gameObject.tag = "Player1";
+                    player2.gameObject.tag = "Player2";
                     player1 = null;
                     player2 = null;
                     playerAlone = null;
@@ -174,6 +185,7 @@ public class MoveTrash : MonoBehaviour
                 player1 = other.gameObject;
                 currentPeopleMoving += 1;
                 Debug.Log("PONGO PLAYER 1");
+                other.gameObject.tag = "Player1Moving";
             }
             else if(other.CompareTag("Player2") && !player2)
             {
@@ -181,6 +193,7 @@ public class MoveTrash : MonoBehaviour
                 player2 = other.gameObject;
                 currentPeopleMoving += 1;
                 Debug.Log("PONGO PLAYER 2");
+                other.gameObject.tag = "Player2Moving";
             }
             
         }
@@ -188,14 +201,15 @@ public class MoveTrash : MonoBehaviour
 
     private void enableHalo()
     {
-        if (Halo)
+        if (Halo && !Halo.activeSelf)
         {
             Halo.SetActive(true);
+            audioSource.PlayOneShot(beepSound, 1F);
         }
     }
     private void disableHalo()
     {
-        if (Halo)
+        if (Halo && Halo.activeSelf)
         {
             Halo.SetActive(false);
         }

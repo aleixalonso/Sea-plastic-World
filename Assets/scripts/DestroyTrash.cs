@@ -22,5 +22,13 @@ public class DestroyTrash : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("Player1Moving"))
+        {
+            other.gameObject.tag = "Player1";
+        }
+        if (other.CompareTag("Player2Moving"))
+        {
+            other.gameObject.tag = "Player2";
+        }
     }
 }

@@ -23,6 +23,8 @@ TagManager:
   - objectiveTriangle
   - TrashObject
   - Fish
+  - Player1Moving
+  - Player2Moving
   layers:
   - Default
   - TransparentFX
