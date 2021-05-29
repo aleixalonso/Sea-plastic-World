@@ -21,12 +21,15 @@ public class MoveTrash : MonoBehaviour
     private float speed = 0.0f;
     private Vector3 oldPosition = Vector3.zero;
     private Vector3 newPosition = Vector3.zero;
+    private Vector3 randPosition = Vector3.zero;
     // Start is called before the first frame update
     void Start()
     {
         oldPosition = transform.position;
         if(transform.Find("Halo")) Halo = transform.Find("Halo").gameObject;
         if(Halo) Halo.SetActive(false);
+        randPosition = new Vector3(Random.Range(9, 90), 0, Random.Range(9, 90));
+        //Debug.Log("POSITION: " + randPosition);
     }
 
     // Update is called once per frame
@@ -34,21 +37,27 @@ public class MoveTrash : MonoBehaviour
     {
         if (!isMoving)
         {
-            /*
+            
             UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
-            float movementSpeed = 0.05f;
-            Vector3 newPosition = new Vector3(Random.Range(9, 90), 0, Random.Range(9, 90));
-            Debug.Log(newPosition);
-            if(transform.position != newPosition)
+            float movementSpeed = 0.1f;
+            //Vector3 randPosition = new Vector3(Random.Range(9, 90), 0, Random.Range(9, 90));
+            float distance = Vector3.Distance(randPosition, transform.position);
+            if (distance > 1.0f)
             {
-                transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * movementSpeed);
+                transform.position = Vector3.Lerp(transform.position, randPosition, Time.deltaTime * movementSpeed);
+                //Debug.Log("RAND POSITION: " + randPosition);
+                //Debug.Log("CURRENT POSITION: " + transform.position);
+            } else
+            {
+                randPosition = new Vector3(Random.Range(9, 50), 0, Random.Range(9, 50));
+                //Debug.Log("NEW POSITION: " + randPosition);
             }
             //float randomX = Random.Range(-0.5f, 0.5f);
             //float randomZ = Random.Range(-0.5f, 0.5f);
             //transform.position += new Vector3(randomX, 0, randomZ);
-            */
+            
         }
-        if(isMoving && peopleToMove == 1 && peopleToMove == currentPeopleMoving)
+        if (isMoving && peopleToMove == 1 && peopleToMove == currentPeopleMoving)
         {
             if (player1)
             {
@@ -159,15 +168,16 @@ public class MoveTrash : MonoBehaviour
         if (!isMoving || (isMoving && currentPeopleMoving < peopleToMove))
         {
             Debug.Log("ENTRO AL ON TRIGGER CON OTHER: " + other.name);
-            isMoving = true;
             if (other.CompareTag("Player1") && !player1)
             {
+                isMoving = true;
                 player1 = other.gameObject;
                 currentPeopleMoving += 1;
                 Debug.Log("PONGO PLAYER 1");
             }
             else if(other.CompareTag("Player2") && !player2)
             {
+                isMoving = true;
                 player2 = other.gameObject;
                 currentPeopleMoving += 1;
                 Debug.Log("PONGO PLAYER 2");
