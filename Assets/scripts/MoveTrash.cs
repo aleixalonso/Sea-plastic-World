@@ -153,7 +153,8 @@ public class MoveTrash : MonoBehaviour
                 enableHalo();
                 timeGrabbed += Time.deltaTime;
                 float dist = Vector3.Distance(player1.transform.position, player2.transform.position);
-                if(dist > 5.0f)
+                Debug.Log("BOTH MOVING");
+                if(dist > 10.0f)
                 {
                     isMoving = false;
                     player1.gameObject.tag = "Player1";
