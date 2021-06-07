@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
      
-        speed = 0.1f;
+        speed = 0.05f;
         
     	transform.Translate(Vector3.back*speed,Space.World);
 
