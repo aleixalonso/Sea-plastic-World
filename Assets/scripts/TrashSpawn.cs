@@ -11,7 +11,7 @@ public class TrashSpawn : MonoBehaviour
 
     public int objectsToDelete = 10;
 
-    protected int deletedObjects = 0;
+    public int deletedObjects = 0;
 
 
     //public GameObject fishPrefab;
@@ -42,6 +42,7 @@ public class TrashSpawn : MonoBehaviour
 
         while (true)
         {
+            Debug.Log("DELETED OBJECTS: " + deletedObjects);
             yield return new WaitForSeconds(respawnTime);
             if(i < objectsToDelete) spawnTrash();
         }
