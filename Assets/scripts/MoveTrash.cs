@@ -86,7 +86,7 @@ public class MoveTrash : MonoBehaviour
 
                 if (timeGrabbed > 2.0)
                 {
-                    Debug.Log("UNITY SPEED: " + speed.ToString("F2"));
+                    //Debug.Log("UNITY SPEED: " + speed.ToString("F2"));
                     if (speed > 120.0)
                     {
                         //Debug.Log("ENTRO PORQUE SPEED: " + speed.ToString("F2"));
@@ -128,7 +128,7 @@ public class MoveTrash : MonoBehaviour
                     timeGrabbed += Time.deltaTime;
                     transform.SetPositionAndRotation(playerAlone.transform.position, transform.rotation);
 
-                    if (timeGrabbed > 2.0)
+                    if (timeGrabbed > 1.0)
                     {
                         isMoving = false;
                         if (playerAlone.CompareTag("Player1Moving"))
@@ -153,7 +153,7 @@ public class MoveTrash : MonoBehaviour
                 enableHalo();
                 timeGrabbed += Time.deltaTime;
                 float dist = Vector3.Distance(player1.transform.position, player2.transform.position);
-                Debug.Log("BOTH MOVING");
+                //Debug.Log("BOTH MOVING");
                 if(dist > 10.0f)
                 {
                     isMoving = false;
@@ -179,13 +179,12 @@ public class MoveTrash : MonoBehaviour
     {
         if (!isMoving || (isMoving && currentPeopleMoving < peopleToMove))
         {
-            Debug.Log("ENTRO AL ON TRIGGER CON OTHER: " + other.name);
+            //Debug.Log("ENTRO AL ON TRIGGER CON OTHER: " + other.name);
             if (other.CompareTag("Player1") && !player1)
             {
                 isMoving = true;
                 player1 = other.gameObject;
                 currentPeopleMoving += 1;
-                Debug.Log("PONGO PLAYER 1");
                 other.gameObject.tag = "Player1Moving";
             }
             else if(other.CompareTag("Player2") && !player2)
@@ -193,11 +192,16 @@ public class MoveTrash : MonoBehaviour
                 isMoving = true;
                 player2 = other.gameObject;
                 currentPeopleMoving += 1;
-                Debug.Log("PONGO PLAYER 2");
                 other.gameObject.tag = "Player2Moving";
             }
             
         }
+    }
+
+    private void OnDestroy()
+    {
+        if(player1) player1.gameObject.tag = "Player1";
+        if(player2) player2.gameObject.tag = "Player2";
     }
 
     private void enableHalo()

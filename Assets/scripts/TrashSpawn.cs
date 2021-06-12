@@ -33,7 +33,7 @@ public class TrashSpawn : MonoBehaviour
         GameObject trashElem = Instantiate( trashPrefabs[i % sizeOfList] ) as GameObject;
         trashElem.transform.parent = trashParent.transform;
         UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
-        trashElem.transform.position = new Vector3(Random.Range(9, 90), 0, Random.Range(9, 90));
+        trashElem.transform.position = new Vector3(Random.Range(20, 90), 0, Random.Range(10, 90));
         i++;
     }
 
@@ -42,7 +42,7 @@ public class TrashSpawn : MonoBehaviour
 
         while (true)
         {
-            Debug.Log("DELETED OBJECTS: " + deletedObjects);
+            //Debug.Log("DELETED OBJECTS: " + deletedObjects);
             yield return new WaitForSeconds(respawnTime);
             if(i < objectsToDelete) spawnTrash();
         }
