@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   peopleToMove: 2
+  movementSpeed: 0.02
   beepSound: {fileID: 8300000, guid: 5df9a518a696f41399abe87b8dd95f22, type: 3}
 --- !u!1 &9117934675043815598
 GameObject:
@@ -265,7 +266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9117934675043815598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.137, y: 0.513, z: -0.036}
+  m_LocalPosition: {x: 0, y: 0.513, z: 0.018}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4273216998507218527}
