@@ -36,14 +36,14 @@ public class deployFish : MonoBehaviour
 
 		if (trashSpawn.deletedObjects > 4){
     	GameObject d = Instantiate(doriPrefab) as GameObject;
-     	d.transform.position = new Vector3 (Random.Range(108 , 10 ), Random.Range(-22 , 0), 80);
+     	d.transform.position = new Vector3 (0, Random.Range(-22 , 0), Random.Range(100 , 0 ));
      	fishesList.Add(d);
      	}
 
 
     	if (trashSpawn.deletedObjects > 5){
     	GameObject p = Instantiate(peixPrefab) as GameObject;
-    	p.transform.position = new Vector3 (Random.Range(108 , 10 ), Random.Range(-22 , 0), 80);
+    	p.transform.position = new Vector3 (Random.Range(51 , 103 ), Random.Range(-22 , 0), Random.Range(42,102));
 		fishesList.Add(p);
     	}	
 

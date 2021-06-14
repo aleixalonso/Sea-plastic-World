@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6262583750463128380}
   - component: {fileID: 5749326867306127535}
   - component: {fileID: 5749326867306127528}
-  - component: {fileID: 5749326867306127534}
+  - component: {fileID: 194309410}
   m_Layer: 0
   m_Name: 12993_Long_Fin_White__Cloud
   m_TagString: Fish
@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4790890735088411362}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.92430615, y: -0.01222497, z: 0.14990781, w: 0.35076526}
+  m_LocalPosition: {x: 7, y: -21.8, z: -35.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5207022285470678286}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -40.148, y: -158.052, z: 170.378}
 --- !u!33 &1259354127619978741
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.2588, y: 0.996, z: 2.3832002}
   m_Center: {x: -0.11459994, y: 0, z: 1.4115}
---- !u!114 &5749326867306127534
+--- !u!114 &194309410
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,10 +122,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4790890735088411362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6585d16ff42ef49d0ab0440fb0f2735a, type: 3}
+  m_Script: {fileID: 11500000, guid: c1e23f96791314b4abfaaaa36ade4e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 0.05
 --- !u!1 &4830356352573761460
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,11 +149,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4830356352573761460}
-  m_LocalRotation: {x: 0, y: 0.6504429, z: 0, w: 0.7595552}
+  m_LocalRotation: {x: -0.2951327, y: -0.7623703, z: -0.40002194, w: -0.41433161}
   m_LocalPosition: {x: 73.2303, y: -22.7, z: 29.551132}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1444609308425400126}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 81.15, z: 0}
+  m_LocalEulerAnglesHint: {x: -21.43, y: -248.8, z: 57.09}

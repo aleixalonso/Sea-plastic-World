@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 541126620114719321}
   - component: {fileID: 5778623551418357810}
   - component: {fileID: 5778623551418357813}
-  - component: {fileID: 5778623551418357812}
+  - component: {fileID: 1053456264}
   m_Layer: 0
   m_Name: 13006_Blue_Tang_v1
   m_TagString: Fish
@@ -113,7 +113,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0778017, y: 11.899403, z: 7.0361037}
   m_Center: {x: -0.00000025625195, y: 0.9918993, z: 3.6045504}
---- !u!114 &5778623551418357812
+--- !u!114 &1053456264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,10 +122,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2358860434275581765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6585d16ff42ef49d0ab0440fb0f2735a, type: 3}
+  m_Script: {fileID: 11500000, guid: 26eb97d682f5a4b8b947c92759a7e327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 0.05
 --- !u!1 &6697031114893190503
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,11 +149,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6697031114893190503}
-  m_LocalRotation: {x: -0.1275157, y: -0.6930388, z: -0.70953166, w: -0.0013646781}
+  m_LocalRotation: {x: 0.5340932, y: -0.3661589, z: -0.4841898, w: -0.5884151}
   m_LocalPosition: {x: 56.86783, y: -27.9, z: 48.32413}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7782607886297432112}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -79.457, y: 87.847, z: -257.568}
+  m_LocalEulerAnglesHint: {x: -79.457, y: -28.141, z: -257.568}
